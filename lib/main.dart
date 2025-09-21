@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waveguard/Screens/splashscreen.dart';
+import 'package:waveguard/Screens/SplashScreen/splashscreen.dart';
 import 'package:waveguard/config/theme.dart';
 import 'main_navigation.dart';
 

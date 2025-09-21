@@ -1,8 +1,5 @@
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:waveguard/config/theme.dart';
 
 class ProfileTrashtoCash extends StatelessWidget {
@@ -224,14 +221,14 @@ class ProfileTrashtoCash extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(width:10),
+                          const SizedBox(width:10),
                           //line
                           Container(
                             width: 1,
                             height: 80,
                             color: Colors.white.withOpacity(0.5),
                           ),
-                          SizedBox(width:10),
+                          const SizedBox(width:10),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -243,7 +240,7 @@ class ProfileTrashtoCash extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(height: 8),
-                              Text("Withdraw Your Earnings",
+                              const Text("Withdraw Your Earnings",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
@@ -268,8 +265,8 @@ class ProfileTrashtoCash extends StatelessWidget {
               ),
               const SizedBox(height: 40), // Space for the points table overflow
               // Menu Items Section
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -278,7 +275,7 @@ class ProfileTrashtoCash extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 0), // Bottom spacing
-              Padding(padding: EdgeInsets.all(12),
+              Padding(padding: const EdgeInsets.all(12),
               child:Center(
                 child: Column(
                   children: [
@@ -299,18 +296,7 @@ class ProfileTrashtoCash extends StatelessWidget {
                   //qrcode download button
                   ElevatedButton(
                     onPressed: () async {
-                      // Download the QR code image
-                      final ByteData imageData = await rootBundle.load('assets/images/qrcode.png');
-                      final Uint8List bytes = imageData.buffer.asUint8List();
-
-                      final result = await ImageGallerySaver.saveImage(bytes, name: "qrcode");
-                      ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(result['isSuccess'] == true
-                          ? 'QR Code downloaded to gallery!'
-                          : 'Failed to download QR Code.'),
-                      ),
-                      );
+                      //download of the proper QR
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppTheme.primaryBlue,
